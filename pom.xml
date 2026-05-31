@@ -5,14 +5,15 @@
   <version>0.0.1-SNAPSHOT</version>
    <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
+             <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version>
+            <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
-            </plugin>
-            <plugin>
+        </plugin>
+         <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
                 <version>5.0.0</version>
@@ -25,22 +26,22 @@
                         </goals>
                         <configuration>
                             <projectName>cucumber-jvm-example</projectName>
-                            <!-- optional, per documentation set this to "true" to bypass generation of Cucumber Reports entirely, defaults to false if not specified -->
+							<!-- optional, per documentation set this to "true" to bypass generation of Cucumber Reports entirely, defaults to false if not specified -->
                             <skip>false</skip>
-                            <!-- output directory for the generated report -->
+							<!-- output directory for the generated report -->
                             <outputDirectory>${project.build.directory}</outputDirectory>
-                            <!-- optional, defaults to outputDirectory if not specified -->
+							<!-- optional, defaults to outputDirectory if not specified -->
                             <inputDirectory>${project.build.directory}/jsonReports</inputDirectory>
                             <jsonFiles>
-                                <!-- supports wildcard or name pattern -->
+								<!-- supports wildcard or name pattern -->
                                 <param>**/*.json</param>
                             </jsonFiles>
-                            <!-- optional, defaults to outputDirectory if not specified -->
-                            <!-- optional, set true to group features by its Ids -->
+							<!-- optional, defaults to outputDirectory if not specified -->
+							<!-- optional, set true to group features by its Ids -->
                             <mergeFeaturesById>false</mergeFeaturesById>
-                            <!-- optional, set true to get a final report with latest results of the same test from different test runs -->
+							<!-- optional, set true to get a final report with latest results of the same test from different test runs -->
                             <mergeFeaturesWithRetest>false</mergeFeaturesWithRetest>
-                            <!-- optional, set true to fail build on test failures -->
+							<!-- optional, set true to fail build on test failures -->
                             <checkBuildResult>false</checkBuildResult>
                         </configuration>
                     </execution>
@@ -56,10 +57,16 @@
     <scope>test</scope>
 </dependency>
 <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.13.2</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-java</artifactId>
     <version>7.34.3</version>
-    <scope>compile</scope>
+    <scope>test</scope>
 </dependency>
 <dependency>
     <groupId>io.cucumber</groupId>
@@ -71,7 +78,7 @@
     <groupId>com.fasterxml.jackson.core</groupId>
     <artifactId>jackson-databind</artifactId>
     <version>2.21.3</version>
-    <scope>compile</scope>
+    <scope>test</scope>
 </dependency>
   </dependencies>
 </project>

@@ -11,7 +11,7 @@ Scenario Outline: Verify place API is successfully added
   
   Examples:
     |name    |language  |Address  |
-    |Rahul   |Tamil     |Kerala   |
+    |Rahul   |Kannada   |Kerala   |
    #|Mannat  |Bhojpuri  |merut    |
  
  @DeletePlace @Regression 
