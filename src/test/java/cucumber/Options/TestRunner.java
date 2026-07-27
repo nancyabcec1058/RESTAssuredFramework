@@ -6,7 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-	    features = "src/test/resources/features",
+	    features = "src/test/java/features",
 	    glue = {"stepDefinitions"},
 	    plugin={"json:target/jsonReports/cucumber-report.json",
 	    		"html:target/cucumber-html-reports/cucumber-reports.html"}
